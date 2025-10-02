@@ -31,16 +31,6 @@ This combined project WANS (Wearable Assistive Navigation System) enables smart 
 
 ---
 
-## Wiring Schematics
-
-- **Glove, Water, and Pithole Detection Layout**
-
-![Shoe Module Wiring](shoe_bb.jpg)
-
-*(Add Glove GPS breadboard schematic, PDF: BN_Glove_-gps_bb.pdf, in your repo for reference)*
-
----
-
 ## Features
 
 - **Glove GPS:** Real-time latitude/longitude, date/time logging to Firebase
@@ -58,6 +48,7 @@ Email & password
 
 **Database rule for Firebase RTDB Rules Set:**
 
+`
 // These rules grant access to a node matching the authenticated
 // user's ID from the Firebase auth token
 {
@@ -70,6 +61,7 @@ Email & password
 }
 }
 }
+`
 
 ---
 
