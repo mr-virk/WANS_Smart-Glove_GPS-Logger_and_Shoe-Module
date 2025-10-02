@@ -130,6 +130,25 @@ HazardDetect --> Idle : No Hazard
 
 ---
 
+## State Diagram (Shoe Module)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> PitholeDetect : Ultrasonic Trigger
+    PitholeDetect --> PitholeAlert : Distance > Threshold
+    PitholeDetect --> Idle : Distance <= Threshold
+    PitholeAlert --> Idle : Alert Cleared
+
+    Idle --> WaterCheck : Water Sensor Read
+    WaterCheck --> WaterAlert : Water Detected
+    WaterCheck --> Idle : No Water Detected
+    WaterAlert --> Idle : Alert Cleared
+```
+
+---
+
+
 ## Code Structure
 
 - **Glove GPS:** WiFi init, GPS serial read, time fetch (NTP), Firebase logging, buzzer alarm logic
